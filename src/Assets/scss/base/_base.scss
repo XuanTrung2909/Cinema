@@ -29,7 +29,12 @@ ul{
   display: flex;
   flex-wrap: wrap;
 }
-
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
 @media screen and (min-width: 1440px) {
   .container{
     width: 144em;

@@ -50,7 +50,7 @@
     height: 100vh;
     width: $w-8;
     background-color: $color-white;
-    transition: all 0.5s;
+    // transition: all 0.5s;
     font-size: $font-size-normal;
     line-height: 5rem;
     z-index: 10;
@@ -82,6 +82,7 @@
     height: 100vh;
     background-color: $color-overlay;
     transition: all 0.5s;
+    z-index: 9;
   }
   
 }

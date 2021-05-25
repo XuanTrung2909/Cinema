@@ -1,25 +1,21 @@
 import { Button } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Animated } from "react-animated-css";
 import { Link, NavLink } from "react-router-dom";
 import logo from "./../Assets/img/tix-logo.png";
 
 export default function Header(props) {
   let [checkMenu, setCheckMenu] = useState(false);
-  
 
   const showMenu = () => {
-    setCheckMenu({
-      checkMenu: true,
-    });
+    setCheckMenu(true);
   };
   const hideMenu = () => {
-    setCheckMenu({
-      checkMenu: false,
-    });
+    setCheckMenu(false);
   };
-
-  
+  // const handleClickOutSide = (event) => {
+  //   if()
+  // }
 
   return (
     <div className="header row">
@@ -55,8 +51,9 @@ export default function Header(props) {
         animationIn="fadeInRight"
         animationOut="fadeOutRight"
         animationInDuration="500"
-        className="menu__mobile"
-        isVisible={checkMenu}
+        animationOutDuration="500"
+        className={checkMenu ? 'menu__mobile show' : 'menu__mobile hide'}
+        
       >
         <div className="sign__mobile">
           <Link className="link" to="/dang-nhap">
@@ -80,7 +77,11 @@ export default function Header(props) {
           </li>
         </ul>
       </Animated>
-      <Animated className="overlay" isVisible={checkMenu}></Animated>
+      <Animated
+        className={checkMenu ? 'overlay show' : 'overlay hide'}
+        animationInDuration="500"
+        onClick={hideMenu}
+      ></Animated>
     </div>
   );
 }
