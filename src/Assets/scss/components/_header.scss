@@ -1,0 +1,87 @@
+.header {
+  height: 8rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 2rem;
+  #menuCheck{
+    display: none;
+  }
+  .logo {
+    img {
+      width: $w-6;
+    }
+  }
+  .nav {
+    justify-content: center;
+    li {
+      .navlink {
+        font-size: medium;
+        margin: 0 $margin-item;
+        transition: all 0.5s;
+      }
+
+      &:hover .navlink {
+        font-weight: bold;
+        color: $color-primary;
+      }
+    }
+    .active {
+      font-weight: bold;
+      color: $color-primary;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .sign {
+    button {
+      @extend %buttonStyle;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .menu__mobile {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: $w-8;
+    background-color: $color-white;
+    transition: all 0.5s;
+    font-size: $font-size-normal;
+    line-height: 5rem;
+    z-index: 10;
+    padding: 2rem;
+    .sign__mobile{
+      display: flex;
+      justify-content: space-between;
+      button{
+        @extend %buttonStyle;
+        font-size: small;
+        display: block;
+      }
+    }
+    
+  }
+  .icon__menu{
+    font-size: 2rem;
+    display: none;
+    @media screen and (max-width: 767px){
+      display: block;
+    }
+
+  }
+  .overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: $color-overlay;
+    transition: all 0.5s;
+  }
+  
+}
